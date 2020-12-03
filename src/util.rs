@@ -40,7 +40,11 @@ where
         .collect()
 }
 
-pub fn parse_lines_and_split<T>(input: &str, split: char) -> Vec<Vec<T>>
+pub fn lines_and_chars(input: &str) -> Vec<Vec<char>> {
+    input.lines().map(|line| line.chars().collect()).collect()
+}
+
+pub fn parse_lines_and_split<T>(input: &str, split: &str) -> Vec<Vec<T>>
 where
     T: FromStr,
     <T as FromStr>::Err: Debug,

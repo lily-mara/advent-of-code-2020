@@ -1,13 +1,6 @@
 use crate::util::*;
 use aoc_runner_derive::{aoc, aoc_generator};
 
-pub struct Stuff {
-    low: usize,
-    high: usize,
-    c: char,
-    pass: String,
-}
-
 #[aoc_generator(day3)]
 pub fn gather_input(input: &str) -> Vec<Vec<char>> {
     lines_and_chars(input)

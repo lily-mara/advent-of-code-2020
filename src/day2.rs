@@ -1,4 +1,3 @@
-use crate::util::*;
 use aoc_runner_derive::{aoc, aoc_generator};
 
 pub struct Stuff {

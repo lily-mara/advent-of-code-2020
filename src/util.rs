@@ -8,7 +8,13 @@ where
     T: FromStr,
     <T as FromStr>::Err: Debug,
 {
-    input.lines().map(|l| l.parse().unwrap()).collect()
+    input
+        .lines()
+        .map(|l| match l.parse() {
+            Ok(x) => x,
+            Err(_) => panic!("Failed to parse {:?}", l),
+        })
+        .collect()
 }
 
 pub fn parse_commas<T>(input: &str) -> Vec<T>
